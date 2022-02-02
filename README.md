@@ -26,6 +26,7 @@ Usage of program for attacking targets without prior mutual consent is illegal. 
 ```
 git clone https://github.com/Realradioactive/log4j-radioactiveshell
 cd log4j-radioactiveshell
+chmod +x /home/Username/log4j-radioactiveshell/jdk1.8.0_20/bin/*
 bash realradioactive-log4jshell.sh or ./realradioactive-log4jshell.sh
 ```
 
